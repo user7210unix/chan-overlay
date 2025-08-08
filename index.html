@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Overlay]</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="nav-section">
+            <div id="favorite-boards-nav-list"></div>
+        </div>
+        <div class="nav-section">
+            <div id="boards-nav-list"></div>
+        </div>
+        <div class="nav-section">
+            <div class="nav-item"><a href="#" id="settings-toggle">[/settings/]</a></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Boards Page -->
+        <div id="boards-page" class="page active">
+            <div class="content">
+                <div class="welcome">
+                    <h2 id="greeting"></h2>
+                    <div id="datetime" class="datetime"></div>
+                    <p>4Chan web overlay using proxy.</p>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="board-search" placeholder=">search boards">
+                    <button id="search-btn">[Go]</button>
+                </div>
+                <div id="search-suggestions" class="suggestions"></div>
+                <div id="favorite-boards" class="section">
+                    <h2>Favorite Boards</h2>
+                    <div id="favorite-boards-list" class="board-links"></div>
+                </div>
+                <div class="section">
+                    <h2>All Boards</h2>
+                    <div id="boards-list" class="board-links"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Threads Page -->
+        <div id="threads-page" class="page">
+            <div class="content">
+                <div class="welcome">
+                    <h2 id="board-title"></h2>
+                </div>
+                <div class="filter-container">
+                    <input type="text" id="thread-filter" placeholder=">filter threads">
+                    <select id="thread-sort">
+                        <option value="bump">Bump Order</option>
+                        <option value="replies">Most Replies</option>
+                        <option value="recent">Most Recent</option>
+                    </select>
+                    <select id="media-filter">
+                        <option value="all">All</option>
+                        <option value="images">Images</option>
+                        <option value="videos">Videos</option>
+                    </select>
+                </div>
+                <div id="threads-list"></div>
+            </div>
+        </div>
+
+        <!-- Chat Page -->
+        <div id="chat-page" class="page">
+            <div class="content">
+                <div class="welcome">
+                    <h2 id="thread-title"></h2>
+                    <button id="back-to-threads-btn" class="btn secondary">[/back/] Back to Threads</button>
+                </div>
+                <div id="chat-messages"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Drawer (Mobile) -->
+    <div id="nav-drawer" class="nav-drawer">
+        <div class="nav-section">
+            <div id="favorite-boards-nav-list"></div>
+        </div>
+        <div class="nav-section">
+            <div id="boards-nav-list"></div>
+        </div>
+        <div class="nav-section">
+            <div class="nav-item"><a href="#" id="settings-toggle-nav">[/settings/]</a></div>
+        </div>
+    </div>
+
+    <!-- CORS Proxy Prompt -->
+    <div id="cors-proxy-prompt" class="dialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2>Access Required</h2>
+            </div>
+            <p>This site uses a CORS proxy to fetch data. Please request access to continue.</p>
+            <button id="cors-proxy-btn" class="btn primary">[/request/] Request Access</button>
+        </div>
+    </div>
+
+    <!-- Image Modal -->
+    <div id="image-modal" class="dialog image-modal-content">
+        <img id="modal-image" alt="Full Image">
+        <button id="close-image-modal" class="dialog-close">[/close/]</button>
+    </div>
+
+    <!-- Image Hover -->
+    <div id="ihover"></div>
+
+    <!-- Settings Dialog -->
+    <div id="settings-dialog" class="dialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2>Settings</h2>
+                <button id="settings-close" class="dialog-close">[/close/]</button>
+            </div>
+            <div class="settings-content">
+                <div class="settings-item">
+                    <span>Image Hover Zoom</span>
+                    <label class="switch">
+                        <input type="checkbox" id="hover-zoom-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item">
+                    <span>Autoplay Videos</span>
+                    <label class="switch">
+                        <input type="checkbox" id="autoplay-toggle" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item">
+                    <span>High Contrast Text</span>
+                    <label class="switch">
+                        <input type="checkbox" id="high-contrast-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-item">
+                    <span>Auto-Refresh Threads</span>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-refresh-toggle">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="settings-section">
+                    <h3>Favorite Boards</h3>
+                    <div id="favorite-boards-selector" class="selector-list"></div>
+                </div>
+                <div class="settings-section">
+                    <h3>Thread Tags</h3>
+                    <input type="text" id="thread-tag-input" placeholder=">add tag">
+                    <div id="thread-tags-list" class="tag-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reply Preview -->
+    <div id="reply-preview-popup" class="dialog"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
