@@ -31,7 +31,11 @@
 <div align="left">
 
 <p align="center">
-  <img src="assets/images/preview.png" alt="Preview" width="600" style="border: 2px solid #555; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);"/>
+  <img src="assets/preview1.png" alt="Preview" width="900" style="border: 2px solid #555; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);"/>
+</p>
+
+<p align="center">
+  <img src="assets/preview2.png" alt="Preview" width="900" style="border: 2px solid #555; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);"/>
 </p>
 
 <div align="left">
